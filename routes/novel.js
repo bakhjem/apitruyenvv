@@ -35,6 +35,7 @@ router.get("/", function (req, res, next) {
   var idnovel = null;
   var idchapter = null;
   var cover = null;
+  var des = null;
   var lastupdates = [];
   var update_time = null;
   var id = null;
@@ -63,6 +64,7 @@ router.get("/", function (req, res, next) {
     view = view.slice(view.search(': ')+1)
     // dateupdate = $(".updated").text();
     description = $("#noidungm").html();
+    des = $("#noidungm").text();
     // description = description.slice(1,description.search('<hr>'))
     $(".chapter-list .row").each(function (result) {
       $(this)
@@ -88,7 +90,7 @@ router.get("/", function (req, res, next) {
       cover: cover,
       genresdata: genresdata,
       status: status,
-      // dateupdate: dateupdate,
+      des: des,
       description: description,
       chapterlist: chapterlist,
       view: view
